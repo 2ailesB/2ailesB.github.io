@@ -2561,6 +2561,10 @@ input, select, textarea {
 			margin: 1.5em 0 0 0;
 			padding: 1.5em 0 0 0;
 		}
+		ul.posts li span {
+			position: relative;
+			right: 20px;
+		  }
 
 			ul.posts li:first-child {
 				border-top: 0;
