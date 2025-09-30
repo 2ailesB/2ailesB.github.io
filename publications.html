@@ -106,6 +106,37 @@
 						<article class="post">
 							<header>
 								<div class="title">
+									<h2>ENMA: Tokenwise Autoregression for Generative Neural PDE Operators.</h2>
+									<p>Armand Kassaï Koupaï, Lise Le Boudec, Louis Serrano, Patrick Gallinari <a href="citations/enmapreprint.html">[CITE]</a></p>
+								</div>
+								<div class="meta">
+									<img src="images/NeurIPS_Logo.svg" alt="" width=150/>
+									<p class="spotlight"> <strong> SPOTLIGHT </strong></p>
+									<time class="published" datetime="2025-06-12">Jun 12, 2025</time>
+									<time class="updated" datetime="2025-09-30">Sept 30, 2025</time>
+									<!-- <a href="https://iclr.cc" class="author"><span class="name">ICLR 2025 </span></a>  -->
+								</div>
+							</header>
+							<!-- <a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a> -->
+							<p>Solving time-dependent parametric partial differential equations (PDEs) remains a fundamental challenge for neural solvers, particularly when generalizing across a wide range of physical parameters and dynamics. When data is uncertain or incomplete-as is often the case-a natural approach is to turn to generative models. We introduce ENMA, a generative neural operator designed to model spatio-temporal dynamics arising from physical phenomena. ENMA predicts future dynamics in a compressed latent space using a generative masked autoregressive transformer trained with flow matching loss, enabling tokenwise generation. Irregularly sampled spatial observations are encoded into uniform latent representations via attention mechanisms and further compressed through a spatio-temporal convolutional encoder. This allows ENMA to perform in-context learning at inference time by conditioning on either past states of the target trajectory or auxiliary context trajectories with similar dynamics. The result is a robust and adaptable framework that generalizes to new PDE regimes and supports one-shot surrogate modeling of time-dependent parametric PDEs.</p>
+							<footer>
+								<ul class="actions">
+									<!-- <li><a href="https://github.com/LouisSerrano/coral"><i class="fab fa-github" style='font-size:45px'></i></span></a></li> -->
+									<!-- <li><a href="https://openreview.net/pdf?id=jqVj8vCQsT"><i class="fa fa-book" style='font-size:45px'></i></span></a></li> -->
+									<li><a href="https://arxiv.org/abs/2506.06158"><i class="ai ai-arxiv" style='font-size:45px'></i></span></a></li>
+									<li><a href="https://neurips.cc/virtual/2025/poster/120060"><img src="images/NeurIPS_Logo.svg" alt="" height=45/></a></li>
+								</ul>
+								<!-- <ul class="stats">
+									<li><a href="#">General</a></li>
+									<li><a href="#" class="icon solid fa-heart">28</a></li>
+									<li><a href="#" class="icon solid fa-comment">128</a></li>
+								</ul> -->
+							</footer>
+						</article> 
+
+						<article class="post">
+							<header>
+								<div class="title">
 									<h2>Learning a Neural Solver for Parametric PDE to Enhance Physics-Informed Methods.</h2>
 									<p>Lise Le Boudec, Emmanuel de Bezenac, Louis Serrano, Ramon Daniel Regueiro-Espino, Yuan Yin, Patrick Gallinari <a href="citations/ngdpreprint.html">[CITE]</a></p>
 								</div>
@@ -120,10 +151,11 @@
 							<p>Physics-informed deep learning often faces optimization challenges due to the complexity of solving partial differential equations (PDEs), which involve exploring large solution spaces, require numerous iterations, and can lead to unstable training. These challenges arise particularly from the ill-conditioning of the optimization problem, caused by the differential terms in the loss function. To address these issues, we propose learning a solver, i.e., solving PDEs using a physics-informed iterative algorithm trained on data. Our method learns to condition a gradient descent algorithm that automatically adapts to each PDE instance, significantly accelerating and stabilizing the optimization process and enabling faster convergence of physics-aware models. Furthermore, while traditional physics-informed methods solve for a single PDE instance, our approach addresses parametric PDEs. Specifically, our method integrates the physical loss gradient with the PDE parameters to solve over a distribution of PDE parameters, including coefficients, initial conditions, or boundary conditions. We demonstrate the effectiveness of our method through empirical experiments on multiple datasets, comparing training and test-time optimization performance. </p>
 							<footer>
 								<ul class="actions">
-									<!-- <li><a href="https://github.com/LouisSerrano/coral"><i class="fab fa-github" style='font-size:45px'></i></span></a></li> -->
+									<li><a href="https://github.com/2ailesB/neural-parametric-solver"><i class="fab fa-github" style='font-size:45px'></i></span></a></li>
 									<li><a href="https://openreview.net/pdf?id=jqVj8vCQsT"><i class="fa fa-book" style='font-size:45px'></i></span></a></li>
 									<li><a href="https://arxiv.org/abs/2410.06820"><i class="ai ai-arxiv" style='font-size:45px'></i></span></a></li>
-									<!-- <li><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/df54302388bbc145aacaa1a54a4a5933-Abstract-Conference.html"><img src="images/NeurIPS_Logo.svg" alt="" height=45/></a></li> -->
+									<li><a href="https://hal.sorbonne-universite.fr/hal-05093905v1"><img src="images/logo_hal.png" alt="" height=45/></a></li>
+									<li><a href="https://iclr.cc/virtual/2025/poster/28615"><img src="images/ICLR_Logo.svg" alt="" height=45/></a></li>
 								</ul>
 								<!-- <ul class="stats">
 									<li><a href="#">General</a></li>

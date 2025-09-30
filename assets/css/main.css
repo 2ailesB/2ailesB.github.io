@@ -2801,6 +2801,14 @@ input, select, textarea {
 					text-transform: uppercase;
 					white-space: nowrap;
 				}
+				.post > header .meta .spotlight > strong{
+					color: rgb(243, 83, 14);
+					font-size: 18px;
+				}
+				.post > header .meta .spotlight{
+					color: rgb(243, 83, 14);
+					font-size: 18px;
+				}
 
 		.post > a.image.featured {
 			overflow: hidden;
@@ -3613,3 +3621,4 @@ input, select, textarea {
 			}
 
 		}
+
