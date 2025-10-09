@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Learning a Neural Solver for Parametric PDE to Enhance Physics-Informed Methods.">
+  <meta property="og:title" content="physics informed solver for parametric PDEs"/>
+  <meta property="og:description" content="physics informed solver for parametric PDEs"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="../images/schemenips.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="physics informed solver for parametric PDEs">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Learning a Neural Solver for Parametric PDE to Enhance Physics-Informed Methods.</title>
+  
+  
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="video-wrapper header">
+
+    <div class="bg-overlay"></div>
+
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <!-- Title -->
+              <h1 class="xtitle is-1 publication-title">
+                Learning a Neural Solver for Parametric PDE to Enhance Physics-Informed Methods.
+              </h1>
+          
+              <!-- Authors: centered -->
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://2ailesb.github.io/index.html" target="_blank">Lise Le Boudec<sup>1</sup></a></span>
+                <span class="author-block">Emmanuel de Bezenac<sup>2</sup></span>
+                <span class="author-block">Louis Serrano <sup>1</sup></span>
+                <span class="author-block">Ramon Daniel Regueiro-Espino <sup>1</sup></span>
+                <span class="author-block"><a href="https://yuan-yin.github.io">Yuan Yin <sup>3</sup></a></span>
+                <span class="author-block"><a href="https://pages.isir.upmc.fr/gallinari/">Patrick Gallinari <sup>1,4</sup></a></span>
+              </div>
+              <!-- Institutions: left-aligned -->
+              <div class="is-size-5 publication-institutions">
+                <span class="institution-block"><sup>1</sup> Sorbonne Université, CNRS, ISIR, F-75005 Paris, France</span><br>
+                <span class="institution-block"><sup>2</sup> INRIA Paris, France</span><br>
+                <span class="institution-block"><sup>3</sup> Valeo.ai, Paris, France</span><br>
+                <span class="institution-block"><sup>4</sup> Criteo AI Lab, Paris, France</span>
+              </div>
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                        <!-- Arxiv PDF link -->
+                    <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2410.06820.pdf" target="_blank"
+                        class="external-link ">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                        </a>
+                    </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                    <a href="https://github.com/2ailesB/neural-parametric-solver" target="_blank"
+                    class="external-link ">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+
+                <!-- HF link -->
+                <span class="link-block">
+                    <a href="https://huggingface.co/datasets/2ailesB/neural-parametric-solver-datasets" target="_blank"
+                    class="external-link ">
+                    <span class="icon">
+                        <i> <img src="images/hfbw.svg" alt="Hugging Face"/></i>
+                    </span>
+                    <span>Datasets</span>
+                    </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2410.06820>" target="_blank"
+                    class="external-link ">
+                    <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                    </a>
+                </span>
+            </div>
+          </div>
+          <div class="publication-conf">
+            <h2>
+                Published as a conference paper at <a href="https://iclr.cc/virtual/2025/poster/28615" >ICLR 2025</a>. 
+            </h2>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Physics-informed deep learning often faces optimization challenges due to the complexity of solving partial differential equations (PDEs), which involve exploring large solution spaces, require numerous iterations, and can lead to unstable training. These challenges arise particularly from the ill-conditioning of the optimization problem, caused by the differential terms in the loss function. To address these issues, we propose learning a solver, i.e., solving PDEs using a physics-informed iterative algorithm trained on data. Our method learns to condition a gradient descent algorithm that automatically adapts to each PDE instance, significantly accelerating and stabilizing the optimization process and enabling faster convergence of physics-aware models. Furthermore, while traditional physics-informed methods solve for a single PDE instance, our approach addresses parametric PDEs. Specifically, our method integrates the physical loss gradient with the PDE parameters to solve over a distribution of PDE parameters, including coefficients, initial conditions, or boundary conditions. We demonstrate the effectiveness of our method through empirical experiments on multiple datasets, comparing training and test-time optimization performance. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Motivation -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10 content-column">
+            <h2 class="title">Problem and Motivation</h2>
+            <p class="has-text-justified">
+              We focus on solving parametric PDEs of the following form, with physics-informed methods.
+            </p>
+            <img src="images/pdengd.png" style="max-width:200px; width:100%;" class="center-image" alt="PDE considered">
+            <p class="has-text-justified">
+                Physics-informed methods, focuses on solving PDE using the PDE residual and a boundary discrepancy term. 
+                <br> 
+                While these methods have shown promising results, Physics-based losses are ill-conditioned, due to the complexity of derivating highly non-linear neural networks. A simple computation, even on a toy example (see Section 2 of the paper), leads to very bad coniditoning number. As a consequence, solving such systems would require a large number of optimization steps, making computation very long. As illustration, solving Physic-informed Neural Networks (PINNs) typically requires 100k+ optimization steps.
+                We illustrate the ill-conditioning of the PDE losses below, by showing a projection of the optimization path (from left to right: optimizing the PDE or the data loss using GD and the PDE loss using our method) on the Data (top) loss landscape and the PDE (bottom) loss landscape.
+                These example illustrate that the Data lossl andscape is much smoother than the PDE loss landscape, making optimization toward the minimum easier. Our method succeed to find the minimum in a few steps, while not considering any additional data at test time. 
+            </p>
+            <img src="images/plot_theta_traj_100_optlr_MSE_0.png" style="max-width:700px; width:100%;" class="center-image" alt="illustrating optimization path on the data loss landscape">
+            <img src="images/plot_theta_traj_100_optlr_PHY_0_hess.png" style="max-width:700px; width:100%;" class="center-image" alt="illustrating optimization path on the data loss landscape">
+            <p class="has-text-justified">
+              <strong>
+                In our paper "Learning a Neural Solver for Parametric PDE to Enhance Physics Informed Methods", we study how to accelerate the convergence of Physics-based optimizations problems, by learning a dedicated optimizer. Moreover, we show that, under additional assumption, this method improve conditioning of the resulting optimization problem.              </strong>
+            </p>
+            <img src="images/ngd-th.png" style="max-width:700px; width:100%;" class="center-image" alt="Theorem on our neural solver.">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Motivation -->
+  
+
+<!-- Training a neural Solver -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+        <div class="column is-centered">
+        <div class="column is-10 content-column">
+            <h2 class="title">Optimization scheme of a physics-informed method with our framework.</h2>
+            <img  src="images/schemenips.png" width="100%" alt="diagram of the neural solver">
+            <p class="has-text-justified">
+            The key idea in our work is to <strong>learn the optimization steps</strong> to improve the convergence of the optimization. 
+            Compared to a baseline Gradient Descent optimizer, our method expresses as:
+            </p>
+            <img src="images/ngd_opt.png" style="max-width:350px; width:100%;" class="center-image" alt="'update formula of the neural solver">
+            <p class=""has-text-justified>
+            This means that, in order to optimize some parameters denoted as 𝚯, we transform the standard GD algorithm (that only relies on the gradient of the PDE loss), using a learned neural network F. 
+            This network is trained to solve in a few steps, the related PDE, by modifying the gradient direction, toward a more efficient gradient path. 
+            The neural network F is trained using additional data, that are supposed to be available. 
+            </p>
+            <div class="columns is-centered">
+                <div class="column is-half has-text-centered">
+                    <img src="images/inf-ngd.png" alt="Inference NGD" width="100%" alt="pseudo code for inference with neural solver">
+                </div>
+                <div class="column is-half has-text-centered">
+                <img src="images/training-ngd.png" alt="Training NGD" width="100%" alt="pseudo code for training neural solver">
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- End Training -->
+
+<!-- Results -->
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container">
+        <div class="column is-centered">
+        <div class="column is-10 content-column">
+            <h2 class="title">Results</h2>
+            <p class="has-text-justified">
+                We evaluate the proposed method on several baselines and datasets to illustrate the benefits of our method. 
+                First, we evaluate our learned solver against baselines optimizers such as Gradient Descent, Adam or L-BFGS. 
+                Then, we compare our solver to baseline neural models. 
+            </p>
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <!-- Your image here -->
+                  <img src="images/compare_test_opt_helmholtz-hf_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on Helmholtz PDE."/>
+                  <h2 class="subtitle has-text-centered">
+                    Solving the Helmholtz Equation in 1d.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img src="images/compare_test_opt_forcingmspoisson_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on Poisson PDE."/>
+                  <h2 class="subtitle has-text-centered">
+                      Solving the Poisson Equation with forcing term in 1d.
+                  </h2>
+               </div>
+              <div class="item">
+                  <!-- Your image here -->
+                  <img src="images/compare_test_opt_1dnlrd_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on non linear reaction diffusion PDE."/>
+                  <h2 class="subtitle has-text-centered">
+                      Solving the Non linear reaction diffusion Equation in 1d.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img src="images/compare_test_opt_1dnlrdics_10000_MSE_large_2CRV2.pdf" alt="Test-time baselines comparison on non linear reaction diffusion PDE."/>
+                  <h2 class="subtitle has-text-centered">
+                      Solving the Non linear reaction diffusion Equation with varying initial condition in 1d.
+                  </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="images/compare_test_opt_advections_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on advection PDE."/>
+                    <h2 class="subtitle has-text-centered">
+                        Solving the Advection Equation in 1d.
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="images/compare_test_opt_darcy_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on darcy PDE."/>
+                    <h2 class="subtitle has-text-centered">
+                        Solving the Darcy Equation in 2d.
+                    </h2>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="images/compare_test_opt_heat2d_10000_MSE_large_2CR.pdf" alt="Test-time baselines comparison on heat PDE."/>
+                    <h2 class="subtitle has-text-centered">
+                        Solving the Heat Equation in 2d.
+                    </h2>
+                </div>
+                
+            </div>
+
+            <div class="column has-text-centered">
+            <img  src="images/results-ngd.png" style="max-width:900px; width:100%;" height="550" alt="Quantitative comparison of neural solver with baselines">
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+    <div class="column is-centered">
+        <h2 class="title">Visualizations</h2>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_0_helmholtz-hf_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Helmholtz PDE. "/>
+        <h2 class="subtitle has-text-centered">
+          Solving the Helmholtz Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_3_helmholtz-hf_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Helmholtz PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Helmholtz Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_1_forcingmspoisson_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Poisson PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Poisson Equation with forcing term in 1d.
+        </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="images/visualization_NGD_2_forcingmspoisson_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Poisson PDE. "/>
+      <h2 class="subtitle has-text-centered">
+        Solving the Poisson Equation with forcing term in 1d.
+    </h2>
+    </div>
+    <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_3_1dnlrdics_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the non linear reaction diffusionwith varying initial conditions PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Non linear reaction diffusion Equation with varying initial condition in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_4_1dnlrdics_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the non linear reaction diffusionwith varying initial conditions PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Non linear reaction diffusion Equation with varying initial condition in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_5_1dnlrd_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the non linear reaction diffusion PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Non linear reaction diffusion Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_7_1dnlrd_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the non linear reaction diffusion PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Non linear reaction diffusion Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_4_advections_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Advection PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Advection Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_5_advections_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Advection PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Advection Equation in 1d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_6_darcy_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Darcy PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Darcy Equation in 2d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_8_darcy_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Darcy PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Darcy Equation in 2d.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="images/visualization_NGD_1_heat2d_lm-1.png" alt="Qualitative results of reconstruction using neural solver on the Heat PDE. "/>
+        <h2 class="subtitle has-text-centered">
+            Solving the Heat Equation in 2d.
+        </h2>
+      </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">ICLR 2025 Poster</h2>
+
+      <iframe  src="images/poster-grand-V2.pdf" width="100%" height="550" alt="Poster for ICLR 2025 presentation">
+          </iframe>
+
+      </div>
+    </div>
+  </section>
+<!-- End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @inproceedings{
+            boudec2025learning,
+            title={Learning a Neural Solver for Parametric {PDE}s to Enhance Physics-Informed Methods},
+            author={Lise Le Boudec and Emmanuel de Bezenac and Louis Serrano and Ramon Daniel Regueiro-Espino and Yuan Yin and Patrick Gallinari},
+            booktitle={The Thirteenth International Conference on Learning Representations},
+            year={2025},
+            url={https://openreview.net/forum?id=jqVj8vCQsT}
+            }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
