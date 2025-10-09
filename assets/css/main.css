@@ -198,6 +198,10 @@ input, select, textarea {
 		font-style: italic;
 	}
 
+	a i {
+		margin-right: 100px;
+	  }
+
 	p {
 		margin: 0 0 2em 0;
 	}
@@ -3391,6 +3395,7 @@ input, select, textarea {
 /* Sidebar */
 
 	#sidebar {
+		padding-left: 3em;
 		margin-right: 3em;
 		min-width: 22em;
 		width: 22em;
