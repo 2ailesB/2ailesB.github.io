@@ -198,10 +198,6 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-	a i {
-		margin-right: 100px;
-	  }
-
 	p {
 		margin: 0 0 2em 0;
 	}
@@ -3663,6 +3659,7 @@ input, select, textarea {
 	/* Add the line (ensure it's visible and Safari-friendly) */
 	border-bottom: 1px solid rgba(120, 120, 120, 0.9);
 	display: inline-block; /* fixes Safari bug where line stretches full width */
+	padding-right: 50px;
   }
   
   /* The list of icons */
