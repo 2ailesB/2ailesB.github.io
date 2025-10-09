@@ -3625,17 +3625,22 @@ input, select, textarea {
 
 /* Main footer container */
 .footer-publi-icons {
+	display: -webkit-flex; /* Safari prefix */
 	display: flex;
+	-webkit-justify-content: flex-start;
 	justify-content: flex-start; /* align all categories to the left */
+	-webkit-align-items: flex-start;
 	align-items: flex-start;
+	-webkit-flex-wrap: nowrap;
 	flex-wrap: nowrap; /* allows stacking on small screens */
 	gap: 100px; /* space between Code / Paper / Pages blocks */
 	padding: 20px 0;
+	border-top: 1px solid rgba(160, 160, 160, 0.3); /* optional subtle divider */
+	box-sizing: border-box;
   }
   
   /* Each category block (Code, Paper, Pages) */
   .footer-publi-icons > div {
-	/*flex: 1;  fixed width, can shrink if needed */
 	flex: 0 0 auto;
 	text-align: left;
 	min-width: 150px;
@@ -3643,17 +3648,16 @@ input, select, textarea {
   
   /* Category titles */
   .footer-publi-icons h3 {
-	position: relative; /* needed for the pseudo-element */
+	position: relative;
 	margin-bottom: 10px;
 	font-size: 1.1em;
 	font-weight: 600;
-	color: rgb(100, 100, 100); /* adjust for your theme (white if dark background) */
-	/* Optional spacing below the line */
+	color: rgb(100, 100, 100); /* adjust for your theme */
 	padding-bottom: 5px;
-
-	/* Add the line */
-	border-bottom: 1px solid rgba(160, 160, 160, 0.75); /* thickness and color of the line */
-	display: block; /* so the line matches the width of the text */
+  
+	/* Add the line (ensure it's visible and Safari-friendly) */
+	border-bottom: 1px solid rgba(120, 120, 120, 0.9);
+	display: inline-block; /* fixes Safari bug where line stretches full width */
   }
   
   /* The list of icons */
@@ -3661,10 +3665,20 @@ input, select, textarea {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	display: -webkit-flex; /* Safari prefix */
 	display: flex;
-	justify-content: flex-start; /* align icons left */
-	gap: 15px; /* space between icons */
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	-webkit-align-items: center;
+	align-items: center;
 	flex-wrap: nowrap;
+  
+	/* Safari fallback for gap */
+	gap: 15px;
+  }
+  
+  .footer-publi-icons ul.actions > li:not(:last-child) {
+	margin-right: 15px; /* manual fallback if Safari ignores gap */
   }
   
   /* Links (icons) styling */
@@ -3683,8 +3697,10 @@ input, select, textarea {
   /* Responsive: stack the categories vertically on narrow screens */
   @media (max-width: 768px) {
 	.footer-publi-icons {
+	  -webkit-flex-direction: column;
 	  flex-direction: column;
-	  gap: 25px; /* slightly smaller gap vertically */
+	  gap: 25px;
 	}
   }
+  
   
