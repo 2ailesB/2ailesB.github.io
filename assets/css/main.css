@@ -3622,3 +3622,69 @@ input, select, textarea {
 
 		}
 
+
+/* Main footer container */
+.footer-publi-icons {
+	display: flex;
+	justify-content: flex-start; /* align all categories to the left */
+	align-items: flex-start;
+	flex-wrap: nowrap; /* allows stacking on small screens */
+	gap: 100px; /* space between Code / Paper / Pages blocks */
+	padding: 20px 0;
+  }
+  
+  /* Each category block (Code, Paper, Pages) */
+  .footer-publi-icons > div {
+	/*flex: 1;  fixed width, can shrink if needed */
+	flex: 0 0 auto;
+	text-align: left;
+	min-width: 150px;
+  }
+  
+  /* Category titles */
+  .footer-publi-icons h3 {
+	position: relative; /* needed for the pseudo-element */
+	margin-bottom: 10px;
+	font-size: 1.1em;
+	font-weight: 600;
+	color: rgb(100, 100, 100); /* adjust for your theme (white if dark background) */
+	/* Optional spacing below the line */
+	padding-bottom: 5px;
+
+	/* Add the line */
+	border-bottom: 1px solid rgba(160, 160, 160, 0.75); /* thickness and color of the line */
+	display: block; /* so the line matches the width of the text */
+  }
+  
+  /* The list of icons */
+  .footer-publi-icons ul.actions {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-start; /* align icons left */
+	gap: 15px; /* space between icons */
+	flex-wrap: nowrap;
+  }
+  
+  /* Links (icons) styling */
+  .footer-publi-icons ul.actions li a {
+	text-decoration: none;
+	display: inline-block;
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	opacity: 0.9;
+  }
+  
+  .footer-publi-icons ul.actions li a:hover {
+	transform: scale(1.1);
+	opacity: 1;
+  }
+  
+  /* Responsive: stack the categories vertically on narrow screens */
+  @media (max-width: 768px) {
+	.footer-publi-icons {
+	  flex-direction: column;
+	  gap: 25px; /* slightly smaller gap vertically */
+	}
+  }
+  
