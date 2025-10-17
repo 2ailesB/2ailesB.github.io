@@ -407,3 +407,22 @@ a:hover:after{
 .header a{
   color:white;
 }
+
+
+.contrib-list {
+  list-style-type: disc;          /* standard round bullets */
+  list-style-position: outside;   /* bullets align flush left */
+  margin-left: 2em;               /* indent the list slightly */
+  padding-left: 1em;              /* fine control of bullet spacing */
+  text-align: justify;            /* justify wrapped lines */
+}
+
+.contrib-list li {
+  margin-bottom: 0.75em;          /* space between items */
+  text-indent: 0;                 /* prevent weird text shift */
+}
+
+.contrib-list li::marker {
+  color: #444;                    /* optional: bullet color */
+  font-size: 1em;                 /* adjust bullet size */
+}
