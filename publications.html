@@ -106,8 +106,47 @@
 						<article class="post">
 							<header>
 								<div class="title">
+									<h2> Efficient Generative Transformer Operators For Million-Point PDEs </h2>
+									<p>Armand Kassaï Koupaï, Lise Le Boudec, Patrick Gallinari <a href="citations/echopreprint.html">[CITE]</a></p>
+								</div>
+								<div class="meta">
+									<!-- <img src="images/NeurIPS_Logo.svg" alt="" width=150/> -->
+									<!-- <p class="spotlight"> <strong> SPOTLIGHT </strong></p> -->
+									<time class="published" datetime="2025-06-12">Dec 4, 2025</time>
+									<!-- <a href="https://iclr.cc" class="author"><span class="name">ICLR 2025 </span></a>  -->
+								</div>
+							</header>
+							<!-- <a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a> -->
+							<p>We introduce ECHO, a transformer-operator framework for generating million-point PDE trajectories. While existing neural operators (NOs) have shown promise for solving partial differential equations, they remain limited in practice due to poor scalability on dense grids, error accumulation during dynamic unrolling, and task-specific design. ECHO addresses these challenges through three key innovations. (i) It employs a hierarchical convolutional encode-decode architecture that achieves a 100 × spatio-temporal compression while preserving fidelity on mesh points. (ii) It incorporates a training and adaptation strategy that enables high-resolution PDE solution generation from sparse input grids. (iii) It adopts a generative modeling paradigm that learns complete trajectory segments, mitigating long-horizon error drift. The training strategy decouples representation learning from downstream task supervision, allowing the model to tackle multiple tasks such as trajectory generation, forward and inverse problems, and interpolation. The generative model further supports both conditional and unconditional generation. We demonstrate state-of-the-art performance on million-point simulations across diverse PDE systems featuring complex geometries, high-frequency dynamics, and long-term horizons.</p>
+							<footer class="footer-publi-icons">
+								<!-- <div class="footer-code">
+								  <h3>Code</h3>
+								  <ul class="actions">
+									<li><a href="https://github.com/LouisSerrano/coral"><i class="fab fa-github" style='font-size:45px'></i></span></a></li>
+								</ul>
+								</div> -->
+								<div class="footer-paper">
+								  <h3>Paper</h3>
+								  <ul class="actions">
+									<li><a href="https://arxiv.org/abs/2512.04974"><i class="ai ai-arxiv" style='font-size:45px'></i></span></a></li>
+								</ul>
+								</div>
+							  
+								<div class="footer-pagesy">
+								  <h3>Pages</h3>
+								  <ul class="actions">
+									<!-- <li><a href="https://neurips.cc/virtual/2025/poster/120060"><img src="images/NeurIPS_Logo.svg" alt="" height=45/></a></li> -->
+									<li><a href="https://echo-pde.github.io"><img src="images/websit-icon.png" alt="" height=45/></a></li>
+								  </ul>
+								</div>
+							</footer>
+						</article> 
+
+						<article class="post">
+							<header>
+								<div class="title">
 									<h2>ENMA: Tokenwise Autoregression for Generative Neural PDE Operators.</h2>
-									<p>Armand Kassaï Koupaï, Lise Le Boudec, Louis Serrano, Patrick Gallinari <a href="citations/enmapreprint.html">[CITE]</a></p>
+									<p>Armand Kassaï Koupaï, Lise Le Boudec, Louis Serrano, Patrick Gallinari <a href="citations/enmaneurips.html">[CITE]</a></p>
 								</div>
 								<div class="meta">
 									<img src="images/NeurIPS_Logo.svg" alt="" width=150/>
@@ -120,17 +159,19 @@
 							<!-- <a href="single.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a> -->
 							<p>Solving time-dependent parametric partial differential equations (PDEs) remains a fundamental challenge for neural solvers, particularly when generalizing across a wide range of physical parameters and dynamics. When data is uncertain or incomplete-as is often the case-a natural approach is to turn to generative models. We introduce ENMA, a generative neural operator designed to model spatio-temporal dynamics arising from physical phenomena. ENMA predicts future dynamics in a compressed latent space using a generative masked autoregressive transformer trained with flow matching loss, enabling tokenwise generation. Irregularly sampled spatial observations are encoded into uniform latent representations via attention mechanisms and further compressed through a spatio-temporal convolutional encoder. This allows ENMA to perform in-context learning at inference time by conditioning on either past states of the target trajectory or auxiliary context trajectories with similar dynamics. The result is a robust and adaptable framework that generalizes to new PDE regimes and supports one-shot surrogate modeling of time-dependent parametric PDEs.</p>
 							<footer class="footer-publi-icons">
-								<!-- <div class="footer-code">
+								<div class="footer-code">
 								  <h3>Code</h3>
 								  <ul class="actions">
-									<li><a href="https://github.com/LouisSerrano/coral"><i class="fab fa-github" style='font-size:45px'></i></span></a></li>
+									<li><a href="https://github.com/itsakk/enma"><i class="fab fa-github" style='font-size:45px'></i></span></a></li>
 								</ul>
-								</div> -->
+								</div>
 							  
 								<div class="footer-paper">
 								  <h3>Paper</h3>
 								  <ul class="actions">
+									<li><a href="https://openreview.net/pdf?id=3CYXSMFv55"><i class="fa fa-book" style='font-size:45px'></i></a></li>
 									<li><a href="https://arxiv.org/abs/2506.06158"><i class="ai ai-arxiv" style='font-size:45px'></i></span></a></li>
+									<li><a href="https://hal.sorbonne-universite.fr/hal-05426561"><img src="images/logo_hal.png" alt="" height=45/></a></li>
 								</ul>
 								</div>
 							  
@@ -148,7 +189,7 @@
 							<header>
 								<div class="title">
 									<h2>Learning a Neural Solver for Parametric PDE to Enhance Physics-Informed Methods.</h2>
-									<p>Lise Le Boudec, Emmanuel de Bezenac, Louis Serrano, Ramon Daniel Regueiro-Espino, Yuan Yin, Patrick Gallinari <a href="citations/ngdpreprint.html">[CITE]</a></p>
+									<p>Lise Le Boudec, Emmanuel de Bezenac, Louis Serrano, Ramon Daniel Regueiro-Espino, Yuan Yin, Patrick Gallinari <a href="citations/ngdiclr.html">[CITE]</a></p>
 								</div>
 								<div class="meta">
 									<img src="images/ICLR_Logo.svg" alt="" width=150/>
